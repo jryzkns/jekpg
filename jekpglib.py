@@ -12,7 +12,7 @@ c = namedtuple('Config',
 
 config = c(
     Q_CONST      = 10,
-    uv_subsample = True,
+    uv_subsample = False,
     quant        = True,
     dct          = True,
     rle          = True
