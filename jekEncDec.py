@@ -32,9 +32,11 @@ class jekEncoder:
                 jekpglib.subsample2x, (self.co, self.cg))
 
         self.channels = {Y : self.y, Co : self.co, Cg : self.cg}
-        all_blks = self.gen_blk_info( *self.y.shape,  Y) \
-                 + self.gen_blk_info(*self.co.shape, Co) \
-                 + self.gen_blk_info(*self.cg.shape, Cg)
+        all_blks = [ 
+                        *self.gen_blk_info( *self.y.shape,  Y),
+                        *self.gen_blk_info(*self.co.shape, Co),
+                        *self.gen_blk_info(*self.cg.shape, Cg),
+        ]
 
         out_fn = self.fn[:-4] + ".jekpg"
         with open(out_fn, "wb") as f__:
