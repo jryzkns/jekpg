@@ -5,6 +5,7 @@ from multiprocessing import get_context
 import multiprocessing
 import pickle
 import numpy as np
+np.set_printoptions(linewidth=np.inf)
 
 import sys
 
